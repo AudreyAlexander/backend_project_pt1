@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+app.use(express.json());
 app.get('/', (req,res)=>{
     res.send('Hello There');
 });
@@ -21,4 +22,20 @@ app.get('/api/courses/:id',(req,res)=>{
 })
 app.listen(3000, () => {
     console.log('Listenning on port 3000...');
+})
+app.post('/api/courses', (req,res) => {
+    //keep working
+    if (course.length > 3){
+        const course ={
+            id: courses.length +1,
+            name:req.body.name
+        }
+    } 
+})
+
+app.put('/api/courses/:id', (req,res) =>{
+    //keep working
+})
+app.delete('/api/courses/:id', (req,res)=>{
+    //keep working
 })
